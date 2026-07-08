@@ -10,11 +10,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root{
-  --cream:      #FBF7F1;
-  --cream-2:    #F5EEE3;
+  --cream:      #ffe5ec;
+  --cream-2:    #ffdae3;
   --sage:       #ffb3c1;
-  --sage-dark:  #ff809b;
-  --sage-pale:  #ffe6eb;
+  --sage-dark:  #ff8fab;
+  --sage-pale:  #fff0f4;
   --blush:      #E8C2BE;
   --blush-pale: #F6E6E3;
   --beige:      #E9DCC7;
@@ -120,11 +120,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   white-space: nowrap;
 }
 .btn-primary{
-  background: var(--sage-dark);
-  color: var(--cream);
-  box-shadow: 0 14px 30px -12px rgba(91,107,74,.55);
+  background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+  color: var(--white);
+  box-shadow: 0 14px 30px -12px rgba(255,143,171,.55);
 }
-.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 20px 36px -14px rgba(91,107,74,.65); background:#4c5a3d; }
+.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 20px 36px -14px rgba(255,143,171,.65); background: linear-gradient(135deg, var(--sage-dark), var(--sage)); }
 .btn-secondary{
   background: transparent;
   color: var(--sage-dark);
@@ -143,7 +143,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ========================================================================== */
 .site-header{
   position: sticky; top: 0; z-index: 500;
-  background: rgba(251, 247, 241, 0.86);
+  background: rgba(255, 229, 236, 0.86);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid rgba(91,107,74,.1);
@@ -163,7 +163,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--sage-dark);
   display: flex; align-items: center; gap: 10px;
 }
-.logo-img { height: 40px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.logo-img { height: 80px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
 
 .main-nav{ display: flex; align-items: center; gap: 44px; }
 .nav-links{ display: flex; gap: 36px; }
