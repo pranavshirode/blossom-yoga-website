@@ -12,9 +12,9 @@
 :root{
   --cream:      #FBF7F1;
   --cream-2:    #F5EEE3;
-  --sage:       #8A9A73;
-  --sage-dark:  #5B6B4A;
-  --sage-pale:  #E4E9DA;
+  --sage:       #ffb3c1;
+  --sage-dark:  #ff809b;
+  --sage-pale:  #ffe6eb;
   --blush:      #E8C2BE;
   --blush-pale: #F6E6E3;
   --beige:      #E9DCC7;
@@ -163,8 +163,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--sage-dark);
   display: flex; align-items: center; gap: 10px;
 }
-.logo .logo-mark{ width: 30px; height: 30px; flex-shrink: 0; }
-.logo .logo-mark svg{ width: 100%; height: 100%; }
+.logo-img { height: 40px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
 
 .main-nav{ display: flex; align-items: center; gap: 44px; }
 .nav-links{ display: flex; gap: 36px; }
