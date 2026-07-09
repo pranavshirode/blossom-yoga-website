@@ -7,32 +7,33 @@
    loader, a hero focal point and a section-divider heartbeat throughout.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root{
-  --cream:      #ffe5ec;
-  --cream-2:    #ffdae3;
-  --sage:       #ffb3c1;
-  --sage-dark:  #ff8fab;
-  --sage-pale:  #fff0f4;
+  --cream:      #FDF3F6;
+  --cream-2:    #FFF9F7;
+  --sage:       #D98CA4;
+  --sage-dark:  #E86B93;
+  --sage-pale:  #F8E8ED;
   --blush:      #E8C2BE;
   --blush-pale: #F6E6E3;
+  --border-pink: #F1D6DF;
   --beige:      #E9DCC7;
   --lavender:   #C7BEDD;
   --lavender-pale: #EEE9F5;
-  --ink:        #37312A;
-  --ink-soft:   #6B6259;
+  --ink:        #2F2A2D;
+  --ink-soft:   #666666;
   --white:      #FFFFFF;
 
-  --font-display: 'Fraunces', serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
 
-  --radius-lg: 32px;
+  --radius-lg: 24px;
   --radius-md: 20px;
   --radius-sm: 12px;
 
-  --shadow-soft: 0 20px 50px -20px rgba(91, 107, 74, 0.25);
-  --shadow-card: 0 12px 30px -14px rgba(55, 49, 42, 0.18);
+  --shadow-soft: 0 20px 40px -15px rgba(217, 140, 164, 0.2);
+  --shadow-card: 0 12px 25px -10px rgba(232, 107, 147, 0.15);
 
   --ease: cubic-bezier(.4,0,.2,1);
 }
@@ -208,6 +209,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: relative;
   padding: 64px 0 clamp(60px, 8vw, 100px);
   overflow: hidden;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sage-pale) 100%);
 }
 .hero-bg-blob{
   position: absolute; z-index: 0; pointer-events: none;
@@ -309,7 +311,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ========================================================================== */
 .program-card{
   background: var(--white);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-pink);
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-card);
   display: flex; flex-direction: column;
@@ -434,7 +437,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ABOUT PAGE
    ========================================================================== */
 .stat-row{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 8px; }
-.stat-item{ text-align: center; padding: 26px 14px; background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
+.stat-item{ text-align: center;  padding: 34px 24px;
+  background: var(--white);
+  border: 1px solid var(--border-pink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card); }
 .stat-item .num{ font-family: var(--font-display); font-style: italic; font-size: 2.1rem; color: var(--sage-dark); display: block; }
 .stat-item .label{ font-size: .82rem; color: var(--ink-soft); }
 
@@ -449,7 +456,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .mv-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .mv-card{
-  padding: 40px 34px; border-radius: var(--radius-lg);
+  padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--border-pink); box-shadow: var(--shadow-card);
 }
 .mv-card.mission{ background: var(--sage-pale); }
 .mv-card.vision{ background: var(--blush-pale); }
@@ -553,7 +560,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    CONTACT PAGE
    ========================================================================== */
 .contact-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: flex-start; }
-.contact-form{ background: var(--white); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-card); }
+.contact-form{ background: var(--white); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-card); border: 1px solid var(--border-pink); }
 .form-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .field{ margin-bottom: 20px; }
 .field label{ display: block; font-size: .85rem; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
