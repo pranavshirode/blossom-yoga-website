@@ -163,7 +163,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--sage-dark);
   display: flex; align-items: center; gap: 10px;
 }
-.logo-img { height: 80px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.logo-img { height: 120px; width: auto; object-fit: contain; mix-blend-mode: multiply; transform: scale(1.1); transform-origin: left center; }
 
 .main-nav{ display: flex; align-items: center; gap: 44px; }
 .nav-links{ display: flex; gap: 36px; }
