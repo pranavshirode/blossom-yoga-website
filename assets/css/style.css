@@ -94,8 +94,8 @@ p{ margin: 0 0 1em; color: var(--ink-soft); }
 }
 
 .container{ max-width: 1200px; margin: 0 auto; padding: 0 6vw; }
-.section{ padding: clamp(64px, 9vw, 120px) 0; position: relative; }
-.section-tight{ padding: clamp(40px, 6vw, 72px) 0; }
+.section{ padding: clamp(32px, 5vw, 64px) 0; position: relative; }
+.section-tight{ padding: clamp(24px, 4vw, 40px) 0; }
 
 /* ---------- focus & a11y ---------- */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
@@ -207,7 +207,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ========================================================================== */
 .hero{
   position: relative;
-  padding: 64px 0 clamp(60px, 8vw, 100px);
+  padding: 32px 0 clamp(32px, 4vw, 60px);
   overflow: hidden;
   background: linear-gradient(135deg, var(--cream) 0%, var(--sage-pale) 100%);
 }
