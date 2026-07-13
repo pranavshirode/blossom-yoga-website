@@ -619,7 +619,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    ========================================================================== */
 .site-footer{ background: #2F2A24; color: rgba(251,247,241,.82); padding: 72px 0 28px; }
 .footer-grid{ display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 44px; margin-bottom: 56px; }
-.footer-logo{ font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--cream); margin-bottom: 14px; }
+.footer-logo-img { height: 60px; width: auto; object-fit: contain; margin-bottom: 14px; filter: invert(1) brightness(2); }
 .footer-col h4{ color: var(--cream); font-family: var(--font-body); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 18px; }
 .footer-col ul{ display: grid; gap: 12px; }
 .footer-col a{ font-size: .92rem; color: rgba(251,247,241,.72); transition: color .3s var(--ease); }
