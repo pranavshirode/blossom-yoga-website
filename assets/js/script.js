@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
 
       var formData = new FormData(form);
-      fetch('https://script.google.com/macros/s/AKfycbxaRR7L9bXB5bMygBwp16y8rHaKUAf_8bbdOQcg_sH3pRu9jy9jrjzj_7S6kV2jrmyf/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbx-vOZUYJ6OCNZVYa366AOwiXsWvDDmbixcokYHQgMr1BA9pukNJduX_FY8L2dxJk11/exec', {
         method: 'POST',
         body: formData
       })
