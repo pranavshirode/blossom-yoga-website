@@ -485,7 +485,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- How it works ---------- */
 .steps-row{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-.step-item{ text-align: center; padding: 0 18px; position: relative; }
+.step-item{ text-align: center; padding: 0 18px; position: relative; z-index: 2; }
 .step-num{
   width: 64px; height: 64px; border-radius: 50%; background: var(--white); box-shadow: var(--shadow-card);
   display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
@@ -680,4 +680,53 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 480px){
   .masonry{ columns: 1; }
   .trust-strip ul{ gap: 10px 22px; justify-content: flex-start; overflow-x: auto; }
+}
+
+/* ==========================================================================
+   POPUP MODAL
+   ========================================================================== */
+.scroll-popup {
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  max-width: 480px;
+  width: 90%;
+}
+
+.scroll-popup::backdrop {
+  background: rgba(47, 42, 45, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.popup-content {
+  padding: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  line-height: 1;
+  padding: 5px;
+  border-radius: 50%;
+  transition: color .3s var(--ease), background .3s var(--ease);
+}
+
+.popup-close:hover {
+  color: var(--ink);
+  background: var(--cream);
+}
+
+.popup-form {
+  margin-top: 25px;
 }

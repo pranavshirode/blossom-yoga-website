@@ -140,4 +140,30 @@ document.addEventListener('DOMContentLoaded', function () {
     el.textContent = new Date().getFullYear();
   });
 
+  /* ---------- scroll popup ---------- */
+  var popup = document.getElementById('scroll-popup');
+  if (popup) {
+    var hasPopped = false;
+    var onScrollPopup = function () {
+      if (!hasPopped && window.scrollY > 800) {
+        popup.showModal();
+        hasPopped = true;
+        window.removeEventListener('scroll', onScrollPopup);
+      }
+    };
+    window.addEventListener('scroll', onScrollPopup, { passive: true });
+    
+    // light dismiss
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) popup.close();
+    });
+    
+    var closeBtn = popup.querySelector('.popup-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        popup.close();
+      });
+    }
+  }
+
 });
