@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- contact form (UI-only submit) ---------- */
+  /* ---------- contact form (Google Sheets submit) ---------- */
   var form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -97,9 +97,28 @@ document.addEventListener('DOMContentLoaded', function () {
         else { field.style.borderColor = ''; }
       });
       if (!valid) return;
-      form.style.display = 'none';
-      var success = document.getElementById('form-success');
-      if (success) success.classList.add('show');
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      var formData = new FormData(form);
+      fetch('https://script.google.com/macros/s/AKfycbyRlHbIwaxdE1IZPYd_Fx1z7-uT9IIop3TYnI_eOu_Prk7xOtJi-9otdWOC_H2mQTCJ/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(response) {
+        form.style.display = 'none';
+        var success = document.getElementById('form-success');
+        if (success) success.classList.add('show');
+      })
+      .catch(function(error) {
+        console.error('Error!', error.message);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('There was an error submitting your form. Please try again.');
+      });
     });
   }
 
