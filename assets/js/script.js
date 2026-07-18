@@ -3,6 +3,24 @@
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ---------- dark mode toggle ---------- */
+  var savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+  
+  var themeToggles = document.querySelectorAll('.theme-toggle');
+  themeToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+
   /* ---------- header scroll shadow ---------- */
   var header = document.querySelector('.site-header');
   if (header) {
