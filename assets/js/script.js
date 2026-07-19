@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- contact form (Google Sheets submit) ---------- */
+  /* ---------- contact form (Telegram + API submit) ---------- */
   var form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -121,12 +121,21 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
 
-      var formData = new FormData(form);
-      fetch('https://script.google.com/macros/s/AKfycbx-vOZUYJ6OCNZVYa366AOwiXsWvDDmbixcokYHQgMr1BA9pukNJduX_FY8L2dxJk11/exec', {
+      // Extract form data into a plain object
+      var formDataObj = {};
+      new FormData(form).forEach(function(value, key) {
+        formDataObj[key] = value;
+      });
+
+      fetch('/api/submit', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formDataObj)
       })
       .then(function(response) {
+        if (!response.ok) throw new Error('Network response was not ok');
         form.style.display = 'none';
         var success = document.getElementById('form-success');
         if (success) success.classList.add('show');
